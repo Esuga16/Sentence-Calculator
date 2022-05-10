@@ -92,19 +92,20 @@ def eval_tree(t):
 
 stack.clear()
 parser = Lark(my_grammar)
-program = "Were you alright last month?" # add then multiply
+program1 = "Were you alright last month?" # add then multiply
 program2 = "Were you alright?" #add
 program3 = "Were you mad?" #multiply
 program4 = "It is Sunday!" #subtract
 program5 = "It took days." #divide
-program6 = "This is a complex example sentence!"
-program7 = "badd grammar is cool sometimes"
+program6 = "This is a complex example sentence!" #(4+2) + 0 = 6
+program7 = "badd grammar is cool sometimes" # 4-7 - (2-4) = 4-7-(-2) = 4-9 = -5
 program8 = "Were you really alright?" #add extended
 program9 = "This is the even longer extended adder!" #more extended add
 program10 = "This implements extended multiply." #extended multiply
 program11 = "This will review divide" #divide extend
-program12 = "This will work divide" # 4/(4/4) = 1 
-parse_tree = parser.parse(program12)
+program12 = "This will work divide" # 4/(4/4) = 4/(1) = 4
+program13 = "badd grammar is subtle" # 4-(7-2) = 4-5 = -1
+parse_tree = parser.parse(program13)
 #print(parse_tree.pretty())
 print(eval_tree(parse_tree))
 #print(solve(parse_tree))
